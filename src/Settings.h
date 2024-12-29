@@ -99,6 +99,7 @@ public:
 
     // Create a JSON document to store the settings
     StaticJsonDocument<256> doc;
+    
     doc["wifiSSID"] = wifiSSID;
     doc["wifiPassword"] = wifiPassword;
     doc["language"] = language;
@@ -130,8 +131,8 @@ public:
 
   String SettingsToJSON() {
     String json = "{";
-    json += "\"language\":" + language + ",";
-    json += "\"audioUrl\":" + audioUrl + ",";
+    json += "\"language\":\"" + language + "\",";
+    json += "\"audioUrl\":\"" + audioUrl + "\",";
     json += "\"audioVolume\":" + String(audioVolume) + ",";
     json += "\"centerAngle\":" + String(centerAngle) + ",";
     json += "\"idleAngle\":" + String(idleAngle) + ",";
